@@ -575,7 +575,7 @@
 
 <!-- SCRIPTS -->
 <script>
-var currentLang=sessionStorage.getItem('wr-lang')||'en';
+var currentLang=new URLSearchParams(location.search).get('lang')||'en';
 document.body.className='lang-'+currentLang;
 document.documentElement.lang=currentLang;
 document.getElementById('langBtn').textContent=currentLang==='zh'?'EN':'中';
@@ -584,7 +584,8 @@ function toggleLang(){
   document.body.className='lang-'+currentLang;
   document.getElementById('langBtn').textContent=currentLang==='zh'?'EN':'中';
   document.documentElement.lang=currentLang;
-  sessionStorage.setItem('wr-lang',currentLang);
+  history.replaceState(null,'',currentLang==='en'?location.pathname:location.pathname+'?lang=zh');
+  document.querySelectorAll('a[href^="join/"],a[href^="leaderboard/"]').forEach(function(a){var u=a.getAttribute('href').split('?')[0];a.href=currentLang==='en'?u:u+'?lang=zh';});
 }
 document.getElementById('navBurger').addEventListener('click',function(){document.getElementById('navLinks').classList.toggle('is-open');});
 document.getElementById('navDropToggle').addEventListener('click',function(e){e.stopPropagation();document.getElementById('navDropdown').classList.toggle('is-open');});
