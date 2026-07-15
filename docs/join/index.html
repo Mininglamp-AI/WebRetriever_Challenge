@@ -120,7 +120,7 @@
 
 Invite code: &lt;YOUR_INVITE_CODE&gt;
 
-Follow the guide at: https://github.com/Mininglamp-AI/WebRetriever_Challenge/join/guide.md<button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
+Follow the guide at: https://github.com/Mininglamp/Mininglamp-AI/WebRetriever_Challenge/main/docs/join/guide.md<button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
     </div>
   </div>
 
@@ -177,9 +177,9 @@ function toggleLang(){
   b.className='lang-'+lang;
   btn.textContent=lang==='zh'?'EN':'中';
   document.documentElement.lang=lang;
-  localStorage.setItem('wr-lang',lang);
+  sessionStorage.setItem('wr-lang',lang);
 }
-(function(){var lang=localStorage.getItem('wr-lang')||'en';document.body.className='lang-'+lang;document.documentElement.lang=lang;document.getElementById('langBtn').textContent=lang==='zh'?'EN':'中';})();
+(function(){var lang=sessionStorage.getItem('wr-lang')||'en';document.body.className='lang-'+lang;document.documentElement.lang=lang;document.getElementById('langBtn').textContent=lang==='zh'?'EN':'中';})();
 function copyPrompt(btn){
   var block=document.getElementById('prompt-block');
   var text=block.innerText.replace('Copy','').trim();

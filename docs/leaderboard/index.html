@@ -65,9 +65,9 @@ function toggleLang(){
   b.className='lang-'+lang;
   btn.textContent=lang==='zh'?'EN':'中';
   document.documentElement.lang=lang;
-  localStorage.setItem('wr-lang',lang);
+  sessionStorage.setItem('wr-lang',lang);
 }
-(function(){var lang=localStorage.getItem('wr-lang')||'en';document.body.className='lang-'+lang;document.documentElement.lang=lang;document.getElementById('langBtn').textContent=lang==='zh'?'EN':'中';})();
+(function(){var lang=sessionStorage.getItem('wr-lang')||'en';document.body.className='lang-'+lang;document.documentElement.lang=lang;document.getElementById('langBtn').textContent=lang==='zh'?'EN':'中';})();
 </script>
 </body>
 </html>
