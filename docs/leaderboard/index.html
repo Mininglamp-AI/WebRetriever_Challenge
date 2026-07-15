@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>比赛榜单 — WebRetriever Challenge 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="../static/images/favicon.png">
+  <link rel="apple-touch-icon" href="../static/images/apple-touch-icon.png">
+  <style>
+    :root{--primary:#2563eb;--primary-light:#eff6ff;--text:#0f172a;--text-2:#334155;--text-3:#64748b;--text-4:#94a3b8;--border:#e2e8f0;--bg:#fff;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter','Noto Sans SC',-apple-system,sans-serif;color:var(--text);line-height:1.7;background:var(--bg);min-height:100vh;display:flex;flex-direction:column;}
+
+    body.lang-zh [data-lang=en]{display:none !important;}
+    body.lang-en [data-lang=zh]{display:none !important;}
+    .lang-btn{position:fixed;bottom:24px;right:24px;z-index:9999;background:var(--primary);color:white;border:none;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:.85em;font-weight:700;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:all .2s;display:flex;align-items:center;justify-content:center;}
+    .lang-btn:hover{transform:scale(1.08);}
+
+    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.04);}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:54px;}
+    .nav-brand{text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:700;font-size:.95em;color:var(--text-3);}
+    .nav-brand img{height:30px;width:30px;border-radius:50%;object-fit:cover;}
+    .nav-links{display:flex;align-items:center;gap:4px;}
+    .nav-links a{color:var(--text-3);text-decoration:none;font-size:.8em;font-weight:600;padding:6px 12px;border-radius:6px;transition:all .2s;}
+    .nav-links a:hover{color:var(--primary);background:var(--primary-light);}
+    .nav-links a.active{color:var(--primary);background:var(--primary-light);}
+
+    .center-content{flex:1;display:flex;align-items:center;justify-content:center;padding:24px;margin-top:54px;}
+    .message-box{text-align:center;max-width:500px;}
+    .message-box .icon{font-size:3em;color:var(--primary);margin-bottom:20px;}
+    .message-box h1{font-size:1.6em;font-weight:700;margin-bottom:12px;}
+    .message-box p{color:var(--text-2);font-size:1.05em;line-height:1.8;}
+  </style>
+</head>
+<body class="lang-zh">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-brand"><img src="../static/images/logo.jpg" alt=""> WebRetriever Challenge</a>
+    <div class="nav-links">
+      <a href="../" data-lang="zh">赛事主页</a><a href="../" data-lang="en">Home</a>
+      <a href="./" class="active" data-lang="zh">比赛榜单</a><a href="./" class="active" data-lang="en">Leaderboard</a>
+    </div>
+  </div>
+</nav>
+
+<div class="center-content">
+  <div class="message-box">
+    <div class="icon"><i class="fas fa-trophy"></i></div>
+    <h1 data-lang="zh">比赛榜单</h1>
+    <h1 data-lang="en">Competition Leaderboard</h1>
+    <p data-lang="zh">比赛结束后会进行榜单展示！敬请期待！</p>
+    <p data-lang="en">The leaderboard will be displayed after the competition concludes. Stay tuned!</p>
+  </div>
+</div>
+
+<button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+
+<script>
+function toggleLang(){
+  var b=document.body,btn=document.getElementById('langBtn');
+  if(b.classList.contains('lang-zh')){b.classList.replace('lang-zh','lang-en');btn.textContent='中';}
+  else{b.classList.replace('lang-en','lang-zh');btn.textContent='EN';}
+}
+</script>
+</body>
+</html>
