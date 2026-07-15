@@ -26,6 +26,10 @@
     .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.04);transition:box-shadow .3s;}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:54px;}
     .nav-brand{font-weight:700;font-size:.95em;color:var(--primary);text-decoration:none;}
+    /* NAV LINKS */
+    .nav-links{display:flex;align-items:center;gap:4px;}
+    .nav-links>a{color:var(--text-3);text-decoration:none;font-size:.8em;font-weight:600;padding:6px 10px;border-radius:6px;transition:all .2s;}
+    .nav-links>a:hover{color:var(--primary);background:var(--primary-light);}
     /* NAV DROPDOWN */
     .nav-dropdown{position:relative;}
     .nav-dropdown-toggle{color:var(--text-3);text-decoration:none;font-size:.8em;font-weight:600;padding:6px 10px;border-radius:6px;transition:all .2s;cursor:pointer;background:none;border:none;font-family:inherit;display:flex;align-items:center;gap:4px;}
@@ -194,8 +198,8 @@
           <a href="#contact" data-lang="zh"><i class="fas fa-envelope"></i> 联系</a><a href="#contact" data-lang="en"><i class="fas fa-envelope"></i> Contact</a>
         </div>
       </div>
-      <a href="join/" data-lang="zh" style="color:var(--text-3);text-decoration:none;font-size:.8em;font-weight:600;padding:6px 10px;border-radius:6px;transition:all .2s;"><i class="fas fa-terminal"></i> 终端注册</a>
-      <a href="join/" data-lang="en" style="color:var(--text-3);text-decoration:none;font-size:.8em;font-weight:600;padding:6px 10px;border-radius:6px;transition:all .2s;"><i class="fas fa-terminal"></i> Terminal Reg</a>
+      <a href="join/" data-lang="zh"><i class="fas fa-terminal"></i> 终端注册</a>
+      <a href="join/" data-lang="en"><i class="fas fa-terminal"></i> Terminal Reg</a>
     </div>
   </div>
 </nav>
