@@ -23,9 +23,10 @@
     /* NAV */
     .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.04);}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:54px;}
-    .nav-brand{font-weight:700;font-size:.95em;color:var(--primary);text-decoration:none;}
+    .nav-brand{text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:700;font-size:.95em;color:var(--text-3);}
+    .nav-brand img{height:30px;width:30px;border-radius:50%;object-fit:cover;}
     .nav-links{display:flex;align-items:center;gap:4px;}
-    .nav-links a{color:var(--text-3);text-decoration:none;font-size:.8em;font-weight:600;padding:6px 12px;border-radius:6px;transition:all .2s;}
+    .nav-links a{color:var(--text-3);text-decoration:none;font-size:.8em;font-weight:600;padding:6px 10px;line-height:1.5;display:flex;align-items:center;border-radius:6px;transition:all .2s;}
     .nav-links a:hover{color:var(--primary);background:var(--primary-light);}
     .nav-links a.active{color:var(--primary);background:var(--primary-light);}
     .nav-burger{display:none;cursor:pointer;background:none;border:none;font-size:1.2em;color:var(--text-3);padding:8px;}
@@ -72,11 +73,12 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="../" class="nav-brand">WebRetriever Challenge</a>
+    <a href="../" class="nav-brand"><img src="../static/images/logo.jpg" alt=""> WebRetriever Challenge</a>
     <button class="nav-burger" id="navBurger" aria-label="menu"><i class="fas fa-bars"></i></button>
     <div class="nav-links" id="navLinks">
       <a href="../" data-lang="zh">赛事主页</a><a href="../" data-lang="en">Home</a>
       <a href="./" class="active" data-lang="zh">终端注册</a><a href="./" class="active" data-lang="en">Terminal Registration</a>
+      <a href="../leaderboard/" data-lang="zh">比赛榜单</a><a href="../leaderboard/" data-lang="en">Competition Leaderboard</a>
     </div>
   </div>
 </nav>
