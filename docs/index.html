@@ -367,40 +367,42 @@
       <div class="bar"></div>
     </div>
 
-    <!-- 主办 -->
-    <div style="text-align:center;margin-bottom:6px;">
-      <div class="sub-label" data-lang="zh"><i class="fas fa-star" style="color:var(--gold);"></i> 主办方</div>
-      <div class="sub-label" data-lang="en"><i class="fas fa-star" style="color:var(--gold);"></i> Organizer</div>
-    </div>
-    <div class="org-row" style="margin-bottom:24px;">
-      <a href="https://www.mininglamp.com/" target="_blank" class="org-item">
-        <img src="static/images/mininglamp.png" alt="Mininglamp">
-        <span data-lang="zh">明略科技</span><span data-lang="en">Mininglamp Technology</span>
-      </a>
-    </div>
-
-    <!-- 协办 -->
-    <div style="text-align:center;margin-bottom:6px;">
-      <div class="sub-label" data-lang="zh">协办方</div>
-      <div class="sub-label" data-lang="en">Co-organizers</div>
-    </div>
-    <div class="org-row">
-      <a href="https://www.pku.edu.cn/" target="_blank" class="org-item">
-        <img src="static/images/beijing_university.png" alt="PKU">
-        <span data-lang="zh">北京大学</span><span data-lang="en">Peking University</span>
-      </a>
-      <a href="https://ia.cas.cn/" target="_blank" class="org-item">
-        <img src="static/images/casia.png" alt="CASIA">
-        <span data-lang="zh">中科院自动化所</span><span data-lang="en">CASIA</span>
-      </a>
-      <a href="https://www.cair-cas.org.hk/" target="_blank" class="org-item">
-        <img src="static/images/cair_hk.png" alt="CAIR" style="height:38px;">
-        <span data-lang="zh">中科院香港创新院</span><span data-lang="en">CAIR-CAS HK</span>
-      </a>
-      <a href="https://www.jiqizhixin.com/" target="_blank" class="org-item">
-        <img src="static/images/synced.png" alt="Synced">
-        <span data-lang="zh">机器之心</span><span data-lang="en">Synced / Machine Heart</span>
-      </a>
+    <!-- 主办 + 协办：紧凑布局 -->
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:40px;justify-content:center;padding:8px 0 28px;">
+      <!-- 主办方 -->
+      <div style="text-align:center;">
+        <div class="sub-label" data-lang="zh" style="margin-bottom:10px;"><i class="fas fa-star" style="color:var(--gold);"></i> 主办方</div>
+        <div class="sub-label" data-lang="en" style="margin-bottom:10px;"><i class="fas fa-star" style="color:var(--gold);"></i> Organizer</div>
+        <a href="https://www.mininglamp.com/" target="_blank" class="org-item">
+          <img src="static/images/mininglamp.png" alt="Mininglamp" style="height:50px;">
+          <span data-lang="zh">明略科技</span><span data-lang="en">Mininglamp Technology</span>
+        </a>
+      </div>
+      <!-- 分隔线 -->
+      <div style="width:1px;height:80px;background:var(--border);align-self:center;"></div>
+      <!-- 协办方 -->
+      <div style="text-align:center;">
+        <div class="sub-label" data-lang="zh" style="margin-bottom:10px;">协办方</div>
+        <div class="sub-label" data-lang="en" style="margin-bottom:10px;">Co-organizers</div>
+        <div style="display:flex;flex-wrap:wrap;gap:28px;justify-content:center;">
+          <a href="https://www.pku.edu.cn/" target="_blank" class="org-item">
+            <img src="static/images/beijing_university.png" alt="PKU">
+            <span data-lang="zh">北京大学</span><span data-lang="en">Peking University</span>
+          </a>
+          <a href="https://ia.cas.cn/" target="_blank" class="org-item">
+            <img src="static/images/casia.png" alt="CASIA">
+            <span data-lang="zh">中科院自动化所</span><span data-lang="en">CASIA</span>
+          </a>
+          <a href="https://www.cair-cas.org.hk/" target="_blank" class="org-item">
+            <img src="static/images/cair_hk.png" alt="CAIR" style="height:38px;">
+            <span data-lang="zh">中科院香港创新院</span><span data-lang="en">CAIR-CAS HK</span>
+          </a>
+          <a href="https://www.jiqizhixin.com/" target="_blank" class="org-item">
+            <img src="static/images/synced.png" alt="Synced">
+            <span data-lang="zh">机器之心</span><span data-lang="en">Synced / Machine Heart</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- 组委会 -->
