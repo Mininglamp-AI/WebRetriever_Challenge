@@ -1,304 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebRetriever Challenge 2026 — Join</title>
+  <title>终端注册 — WebRetriever Challenge 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0a0a0a;
-      color: #e0e0e0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-    .container {
-      max-width: 640px;
-      width: 100%;
-    }
-    .event-badge {
-      display: inline-block;
-      background: #1e3a5f;
-      border: 1px solid #2563eb;
-      color: #93c5fd;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-      letter-spacing: 0.02em;
-    }
-    h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-    .subtitle {
-      color: #888;
-      margin-bottom: 2.5rem;
-      font-size: 1.1rem;
-    }
-    .lang-toggle {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
-    .lang-btn {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      color: #888;
-      padding: 0.4rem 1rem;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .lang-btn.active {
-      background: #2563eb;
-      border-color: #2563eb;
-      color: #fff;
-    }
-    .lang-zh { display: none; }
-    body.zh .lang-en { display: none; }
-    body.zh .lang-zh { display: block; }
-    body.zh .lang-zh-inline { display: inline; }
-    body.zh .lang-en-inline { display: none; }
-    body:not(.zh) .lang-zh-inline { display: none; }
-    body:not(.zh) .lang-en-inline { display: inline; }
-    .step {
-      background: #151515;
-      border: 1px solid #2a2a2a;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.2rem;
-    }
-    .step-number {
-      display: inline-block;
-      background: #2563eb;
-      color: #fff;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 28px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-right: 0.75rem;
-    }
-    .step h2 {
-      display: inline;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
-    }
-    .step p {
-      margin-top: 0.75rem;
-      color: #aaa;
-      line-height: 1.6;
-    }
-    .code-block {
-      background: #1a1a2e;
-      border: 1px solid #2a2a4a;
-      border-radius: 8px;
-      padding: 2.2rem 1.25rem 1rem 1.25rem;
-      margin-top: 1rem;
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 0.9rem;
-      color: #a5d6ff;
-      position: relative;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      word-break: break-all;
-    }
-    .copy-btn {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      background: #2563eb;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 0.3rem 0.7rem;
-      font-size: 0.75rem;
-      cursor: pointer;
-      opacity: 0.8;
-      transition: opacity 0.2s;
-    }
-    .copy-btn:hover { opacity: 1; }
-    .copy-btn.copied { background: #16a34a; }
-    .note {
-      margin-top: 2rem;
-      padding: 1rem 1.25rem;
-      background: #1a1a0a;
-      border: 1px solid #3a3a1a;
-      border-radius: 8px;
-      color: #cca;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-    .footer {
-      margin-top: 2rem;
-      text-align: center;
-      color: #555;
-      font-size: 0.85rem;
-    }
-    a { color: #60a5fa; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    :root{--primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#eff6ff;--accent:#0891b2;--accent-light:#ecfeff;--gold:#f59e0b;--gold-light:#fffbeb;--bg:#fff;--bg-alt:#f8fafc;--text:#0f172a;--text-2:#334155;--text-3:#64748b;--text-4:#94a3b8;--border:#e2e8f0;--radius:14px;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter','Noto Sans SC',-apple-system,sans-serif;color:var(--text);line-height:1.7;background:var(--bg);}
+
+    /* LANGUAGE */
+    body.lang-zh [data-lang=en]{display:none !important;}
+    body.lang-en [data-lang=zh]{display:none !important;}
+    .lang-btn{position:fixed;bottom:24px;right:24px;z-index:9999;background:var(--text);color:white;border:none;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:.85em;font-weight:700;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:all .2s;display:flex;align-items:center;justify-content:center;}
+    .lang-btn:hover{transform:scale(1.08);}
+
     /* NAV */
-    .nav{position:fixed;top:0;left:0;right:0;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);z-index:99;border-bottom:1px solid #222;}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.04);}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:54px;}
-    .nav-brand{font-weight:700;font-size:.95em;color:#60a5fa;text-decoration:none!important;}
-    .nav-links{display:flex;gap:4px;align-items:center;}
-    .nav-links a{color:#999;text-decoration:none!important;font-size:.8em;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .2s;}
-    .nav-links a:hover,.nav-links a.active{color:#60a5fa;background:rgba(37,99,235,.12);}
-    body{padding-top:70px;}
+    .nav-brand{font-weight:700;font-size:.95em;color:var(--primary);text-decoration:none;}
+    .nav-links{display:flex;align-items:center;gap:4px;}
+    .nav-links a{color:var(--text-3);text-decoration:none;font-size:.8em;font-weight:600;padding:6px 12px;border-radius:6px;transition:all .2s;}
+    .nav-links a:hover{color:var(--primary);background:var(--primary-light);}
+    .nav-links a.active{color:var(--primary);background:var(--primary-light);}
+    .nav-burger{display:none;cursor:pointer;background:none;border:none;font-size:1.2em;color:var(--text-3);padding:8px;}
+    @media(max-width:900px){
+      .nav-links{display:none;position:absolute;top:54px;left:0;right:0;background:white;flex-direction:column;padding:8px 16px;box-shadow:0 4px 16px rgba(0,0,0,.08);}
+      .nav-links.is-open{display:flex;}
+      .nav-links a{padding:10px 12px;font-size:.9em;}
+      .nav-burger{display:block;}
+    }
+
+    /* PAGE */
+    .page-header{background:linear-gradient(150deg,#0f2a4a 0%,#1e40af 45%,#0369a1 100%);padding:120px 24px 60px;text-align:center;position:relative;}
+    .page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 40%,rgba(255,255,255,.07) 0%,transparent 70%);}
+    .page-header .inner{position:relative;z-index:1;}
+    .page-header .badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);color:white;padding:4px 16px;border-radius:20px;font-size:.82em;font-weight:500;margin-bottom:18px;}
+    .page-header h1{color:white;font-size:2.2em;font-weight:800;margin-bottom:8px;}
+    .page-header p{color:rgba(255,255,255,.75);font-size:1.05em;}
+
+    .container{max-width:720px;margin:0 auto;padding:48px 24px 80px;}
+
+    /* STEPS */
+    .step{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:20px;transition:box-shadow .2s;}
+    .step:hover{box-shadow:0 4px 20px rgba(0,0,0,.06);}
+    .step-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+    .step-num{width:32px;height:32px;border-radius:50%;background:var(--primary);color:white;display:flex;align-items:center;justify-content:center;font-size:.85em;font-weight:700;flex-shrink:0;}
+    .step-title{font-size:1.05em;font-weight:700;color:var(--text);}
+    .step-body{color:var(--text-2);font-size:.92em;line-height:1.7;padding-left:44px;}
+
+    .code-block{background:var(--bg-alt);border:1px solid var(--border);border-radius:10px;padding:36px 20px 16px;margin-top:12px;font-family:'SF Mono','Fira Code',monospace;font-size:.85em;color:var(--text);position:relative;overflow-x:auto;white-space:pre-wrap;word-break:break-all;line-height:1.6;}
+    .copy-btn{position:absolute;top:8px;right:8px;background:var(--primary);color:white;border:none;border-radius:6px;padding:4px 10px;font-size:.75em;cursor:pointer;transition:all .2s;}
+    .copy-btn:hover{background:var(--primary-dark);}
+    .copy-btn.copied{background:#16a34a;}
+
+    .note{margin-top:32px;padding:20px 24px;background:var(--gold-light);border:1px solid #fde68a;border-radius:var(--radius);color:var(--text-2);font-size:.9em;line-height:1.7;}
+    .note strong{color:var(--text);}
+
+    .footer-note{margin-top:32px;text-align:center;color:var(--text-4);font-size:.85em;}
+
+    a{color:var(--primary);text-decoration:none;}
+    a:hover{text-decoration:underline;}
   </style>
 </head>
-<body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="../" class="nav-brand">WebRetriever Challenge</a>
-      <div class="nav-links">
-        <a href="../">
-          <span class="lang-en-inline">Home</span>
-          <span class="lang-zh-inline">赛事主页</span>
-        </a>
-        <a href="./" class="active">
-          <span class="lang-en-inline">Terminal Registration</span>
-          <span class="lang-zh-inline">终端注册</span>
-        </a>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="event-badge">WebRetriever Challenge 2026</div>
-    <h1>Join the Competition Space</h1>
-    <p class="subtitle">
-      <span class="lang-en">AI-assisted registration — sign up in 1 minute</span>
-      <span class="lang-zh">AI 辅助注册 — 1 分钟完成注册</span>
-    </p>
+<body class="lang-zh">
 
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('en')">English</button>
-      <button class="lang-btn" onclick="setLang('zh')">中文</button>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-brand">WebRetriever Challenge</a>
+    <button class="nav-burger" id="navBurger" aria-label="menu"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="navLinks">
+      <a href="../" data-lang="zh">赛事主页</a><a href="../" data-lang="en">Home</a>
+      <a href="./" class="active" data-lang="zh">终端注册</a><a href="./" class="active" data-lang="en">Terminal Registration</a>
     </div>
+  </div>
+</nav>
 
-    <div class="step">
-      <span class="step-number">1</span>
-      <h2>
-        <span class="lang-en-inline">Open your AI coding assistant</span>
-        <span class="lang-zh-inline">打开你的 AI 编程助手</span>
-      </h2>
-      <p>
-        <span class="lang-en">Claude Code, ChatGPT Codex, Cursor, or any AI agent with terminal access.</span>
-        <span class="lang-zh">支持 Claude Code、ChatGPT Codex、Cursor 或任何有终端权限的 AI 助手。</span>
-      </p>
+<div class="page-header">
+  <div class="inner">
+    <div class="badge">WebRetriever Challenge 2026</div>
+    <h1 data-lang="zh">终端快速注册</h1>
+    <h1 data-lang="en">Terminal Registration</h1>
+    <p data-lang="zh">AI 辅助注册 — 1 分钟完成，无需浏览器操作</p>
+    <p data-lang="en">AI-assisted registration — sign up in 1 minute, no browser needed</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">1</div>
+      <div class="step-title" data-lang="zh">打开你的 AI 编程助手</div>
+      <div class="step-title" data-lang="en">Open your AI coding assistant</div>
     </div>
+    <div class="step-body">
+      <span data-lang="zh">支持 Claude Code、ChatGPT Codex、Cursor 或任何有终端权限的 AI 助手。</span>
+      <span data-lang="en">Claude Code, ChatGPT Codex, Cursor, or any AI agent with terminal access.</span>
+    </div>
+  </div>
 
-    <div class="step">
-      <span class="step-number">2</span>
-      <h2>
-        <span class="lang-en-inline">Paste this prompt</span>
-        <span class="lang-zh-inline">粘贴以下指令</span>
-      </h2>
-      <p>
-        <span class="lang-en">Copy and send to your AI assistant. Replace the invite code with yours (provided in the competition announcement or your registration confirmation email):</span>
-        <span class="lang-zh">复制并发送给你的 AI 助手。将邀请码替换为你收到的邀请码（来自赛事公告或报名确认邮件）：</span>
-      </p>
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">2</div>
+      <div class="step-title" data-lang="zh">粘贴以下指令</div>
+      <div class="step-title" data-lang="en">Paste this prompt</div>
+    </div>
+    <div class="step-body">
+      <span data-lang="zh">复制并发送给你的 AI 助手。将邀请码替换为你收到的邀请码（来自赛事公告或报名确认邮件）：</span>
+      <span data-lang="en">Copy and send to your AI assistant. Replace the invite code with yours (provided in the competition announcement or your registration confirmation email):</span>
       <div class="code-block" id="prompt-block">Help me register an Octo account and join a Space. Do everything in the terminal, no browser needed.
 
 Invite code: &lt;YOUR_INVITE_CODE&gt;
 
 Follow the guide at: https://hhhhhhalf.github.io/WebRetriever_Challenge/join/guide.md<button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div>
     </div>
+  </div>
 
-    <div class="step">
-      <span class="step-number">3</span>
-      <h2>
-        <span class="lang-en-inline">Follow the prompts</span>
-        <span class="lang-zh-inline">按提示操作</span>
-      </h2>
-      <p>
-        <span class="lang-en">Your AI will ask for your name, email, and password, then handle the registration automatically. You'll just need to check your email for a verification code.</span>
-        <span class="lang-zh">AI 会依次询问你的姓名、邮箱和密码，然后自动完成注册。你只需查收邮箱中的验证码。</span>
-      </p>
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">3</div>
+      <div class="step-title" data-lang="zh">按提示操作</div>
+      <div class="step-title" data-lang="en">Follow the prompts</div>
     </div>
+    <div class="step-body">
+      <span data-lang="zh">AI 会依次询问你的姓名、邮箱和密码，然后自动完成注册。你只需查收邮箱中的验证码。</span>
+      <span data-lang="en">Your AI will ask for your name, email, and password, then handle the registration automatically. You'll just need to check your email for a verification code.</span>
+    </div>
+  </div>
 
-    <div class="step">
-      <span class="step-number">4</span>
-      <h2>
-        <span class="lang-en-inline">Log in to Octo</span>
-        <span class="lang-zh-inline">登录 Octo</span>
-      </h2>
-      <p>
-        <span class="lang-en">Once your AI confirms registration is complete, open Octo and log in with your email + password to enter the competition Space:</span>
-        <span class="lang-zh">AI 确认注册完成后，打开 Octo 用邮箱和密码登录，即可进入比赛空间：</span>
-      </p>
-      <p style="margin-top:0.75rem;">
+  <div class="step">
+    <div class="step-head">
+      <div class="step-num">4</div>
+      <div class="step-title" data-lang="zh">登录 Octo</div>
+      <div class="step-title" data-lang="en">Log in to Octo</div>
+    </div>
+    <div class="step-body">
+      <span data-lang="zh">AI 确认注册完成后，打开 Octo 用邮箱和密码登录，即可进入比赛空间：</span>
+      <span data-lang="en">Once your AI confirms registration is complete, open Octo and log in with your email + password to enter the competition Space:</span>
+      <p style="margin-top:10px;">
         <a href="https://im.deepminer.com.cn" target="_blank">🌐
-          <span class="lang-en-inline">Open Octo</span>
-          <span class="lang-zh-inline">打开 Octo</span>
+          <span data-lang="zh">打开 Octo</span>
+          <span data-lang="en">Open Octo</span>
         </a>
-      </p>
-    </div>
-
-    <div class="note">
-      <strong>
-        <span class="lang-en-inline">Note</span>
-        <span class="lang-zh-inline">提示</span>
-      </strong><br>
-      •
-      <span class="lang-en-inline">Choose a strong password you haven't used elsewhere</span>
-      <span class="lang-zh-inline">请使用未在其他平台用过的强密码</span>
-      <br>
-      •
-      <span class="lang-en-inline">Requires an email that can receive verification codes</span>
-      <span class="lang-zh-inline">需要一个能收验证码的邮箱</span>
-      <br>
-      •
-      <span class="lang-en-inline">Invite code is provided in the competition announcement or via your registration channel</span>
-      <span class="lang-zh-inline">邀请码来自赛事公告或你的报名渠道</span>
-    </div>
-
-    <div class="footer">
-      <p>
-        <span class="lang-en">Powered by Octo · Questions? Contact the organizer</span>
-        <span class="lang-zh">遇到问题请联系主办方</span>
       </p>
     </div>
   </div>
 
-  <script>
-    function setLang(lang) {
-      document.body.classList.toggle('zh', lang === 'zh');
-      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-    }
+  <div class="note">
+    <strong data-lang="zh"><i class="fas fa-info-circle"></i> 提示</strong>
+    <strong data-lang="en"><i class="fas fa-info-circle"></i> Note</strong><br>
+    <span data-lang="zh">• 请使用未在其他平台用过的强密码<br>• 需要一个能收验证码的邮箱<br>• 邀请码来自赛事公告或你的报名渠道</span>
+    <span data-lang="en">• Choose a strong password you haven't used elsewhere<br>• Requires an email that can receive verification codes<br>• Invite code is provided in the competition announcement or via your registration channel</span>
+  </div>
 
-    function copyPrompt(btn) {
-      const block = document.getElementById('prompt-block');
-      const text = block.innerText.replace('Copy', '').trim();
-      navigator.clipboard.writeText(text).then(() => {
-        btn.textContent = '✓';
-        btn.classList.add('copied');
-        setTimeout(() => {
-          btn.textContent = 'Copy';
-          btn.classList.remove('copied');
-        }, 2000);
-      });
-    }
+  <div class="footer-note">
+    <span data-lang="zh">遇到问题？请联系 <a href="mailto:WebRetrieverChallenge@mininglamp.com">WebRetrieverChallenge@mininglamp.com</a></span>
+    <span data-lang="en">Questions? Contact <a href="mailto:WebRetrieverChallenge@mininglamp.com">WebRetrieverChallenge@mininglamp.com</a></span>
+  </div>
 
-    // Auto-detect language
-    if (navigator.language.startsWith('zh')) {
-      setLang('zh');
-      document.querySelectorAll('.lang-btn')[1].classList.add('active');
-      document.querySelectorAll('.lang-btn')[0].classList.remove('active');
-    }
-  </script>
+</div>
+
+<button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+
+<script>
+function toggleLang(){
+  var b=document.body,btn=document.getElementById('langBtn');
+  if(b.classList.contains('lang-zh')){b.classList.replace('lang-zh','lang-en');btn.textContent='中';}
+  else{b.classList.replace('lang-en','lang-zh');btn.textContent='EN';}
+}
+function copyPrompt(btn){
+  var block=document.getElementById('prompt-block');
+  var text=block.innerText.replace('Copy','').trim();
+  navigator.clipboard.writeText(text).then(function(){
+    btn.textContent='✓';btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copy';btn.classList.remove('copied');},2000);
+  });
+}
+document.getElementById('navBurger').addEventListener('click',function(){document.getElementById('navLinks').classList.toggle('is-open');});
+</script>
 </body>
 </html>
