@@ -28,7 +28,7 @@
     .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.04);transition:box-shadow .3s;}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:54px;}
     .nav-brand{text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:700;font-size:.95em;color:var(--primary);}
-    .nav-brand img{height:30px;width:auto;}
+    .nav-brand img{height:30px;width:30px;border-radius:50%;object-fit:cover;}
     /* NAV LINKS */
     .nav-links{display:flex;align-items:center;gap:4px;}
     .nav-links>a{color:var(--text-3);text-decoration:none;font-size:.8em;font-weight:600;padding:6px 10px;border-radius:6px;transition:all .2s;}
@@ -212,7 +212,7 @@
 <section class="hero" id="hero">
   <img src="static/images/header.jpg" alt="" class="hero-bg">
   <div class="hero-inner">
-    <div class="hero-badge"><i class="fas fa-award"></i>&nbsp; ECCV 2026</div>
+    <div class="hero-badge" data-lang="zh"><i class="fas fa-award"></i>&nbsp; 明略科技主办</div><div class="hero-badge" data-lang="en"><i class="fas fa-award"></i>&nbsp; Hosted by Mininglamp Technology</div>
     <h1>WebRetriever Challenge 2026</h1>
     <p class="tagline" data-lang="zh">「 你的 Agent 能在真实网站上完成多少任务？ 」</p>
     <p class="tagline" data-lang="en">「 How many real-world web tasks can your Agent complete? 」</p>
