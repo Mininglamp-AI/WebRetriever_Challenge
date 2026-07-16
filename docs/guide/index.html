@@ -129,7 +129,14 @@
         </div>
       </div>
       <div class="step-item" data-lang="zh">
-        <div class="step-num">4</div>
+        <div class="step-num">4</div><div class="step-line"></div>
+        <div class="step-body">
+          <strong>环境适配 & 冒烟测试</strong>
+          <p>将代码迁移到队伍仓库后，确保依赖安装和运行环境正确配置，通过冒烟测试后方可提交正式评测。</p>
+        </div>
+      </div>
+      <div class="step-item" data-lang="zh">
+        <div class="step-num">5</div>
         <div class="step-body">
           <strong>提交 & 自动评测</strong>
           <p>Push 到 <code>main</code> 分支，通过赛事 Bot 发起评测并获取评分。</p>
@@ -160,7 +167,14 @@
         </div>
       </div>
       <div class="step-item" data-lang="en">
-        <div class="step-num">4</div>
+        <div class="step-num">4</div><div class="step-line"></div>
+        <div class="step-body">
+          <strong>Environment Setup & Smoke Test</strong>
+          <p>After migrating code to your team repository, ensure dependencies and runtime environment are properly configured. You must pass the smoke test before submitting for formal evaluation.</p>
+        </div>
+      </div>
+      <div class="step-item" data-lang="en">
+        <div class="step-num">5</div>
         <div class="step-body">
           <strong>Submit & Automated Evaluation</strong>
           <p>Push to the <code>main</code> branch, initiate evaluation via the Competition Bot, and get your score.</p>
@@ -196,11 +210,6 @@
       <li>Improve the Agent's decision logic, prompt engineering, multi-step reasoning strategies, etc.</li>
       <li>When you receive your team repository, simply migrate your code over</li>
     </ul>
-
-    <div class="info-card accent">
-      <p data-lang="zh">💡 <strong>关键信息</strong>：比赛代码模板中，任务文件路径、结果输出目录、浏览器沙箱地址（CDP URLs）均由评测系统通过命令行参数传入，模板已处理好接口。你只需在 <code>config.json</code> 中配好自己的模型 API（Key、Base URL），其他专注于 Agent 逻辑开发即可。</p>
-      <p data-lang="en">💡 <strong>Key Info</strong>: In the competition template, the task file path, result output directory, and browser sandbox addresses (CDP URLs) are all passed in via command-line arguments by the evaluation system — the template handles the interface. You only need to configure your model API (Key, Base URL) in <code>config.json</code>, and focus on developing your Agent logic.</p>
-    </div>
   </div>
 
   <!-- ========== Section 3: 相关资源 ========== -->
