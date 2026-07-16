@@ -6,6 +6,7 @@
   <title>评测指南 — WebRetriever Challenge 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="icon" type="image/png" href="../static/images/favicon.png">
   <link rel="apple-touch-icon" href="../static/images/apple-touch-icon.png">
   <style>
@@ -71,6 +72,14 @@
     code{background:var(--bg-alt);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.88em;font-family:'SF Mono','Fira Code',monospace;}
 
     .footer{text-align:center;padding:32px 24px;color:var(--text-4);font-size:.8em;border-top:1px solid var(--border);}
+
+    .res-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:20px 0;}
+    .res-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 12px;border-radius:var(--radius);border:1px solid var(--border);text-decoration:none;transition:all .2s;background:var(--bg);}
+    .res-card:hover{border-color:var(--primary);box-shadow:0 4px 16px rgba(37,99,235,.1);transform:translateY(-2px);}
+    .res-icon{width:48px;height:48px;border-radius:12px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:1.3em;margin-bottom:12px;}
+    .res-card .title{font-weight:600;font-size:.85em;color:var(--text);margin-bottom:4px;}
+    .res-card .desc{font-size:.75em;color:var(--text-4);}
+    @media(max-width:600px){.res-grid{grid-template-columns:repeat(2,1fr);}}
   </style>
 </head>
 <body class="lang-zh">
@@ -173,17 +182,32 @@
     <p data-lang="zh">报名完成后，在等待备赛期正式开始之前，建议先熟悉以下资源：</p>
     <p data-lang="en">After registration, we recommend familiarizing yourself with the following resources before the preparation period begins:</p>
 
-    <div class="info-card">
-      <ul data-lang="zh">
-        <li><strong>论文</strong>：<a class="resource-link" href="https://arxiv.org/abs/2607.06118" target="_blank">WebRetriever: A Large-Scale Comprehensive Benchmark for Efficient Web Agent Evaluation</a>（ECCV 2026）</li>
-        <li><strong>数据集</strong>：<a class="resource-link" href="https://huggingface.co/datasets/Mininglamp-2718/WebRetriever" target="_blank">Hugging Face — Mininglamp-2718/WebRetriever</a></li>
-        <li><strong>开源代码</strong>：<a class="resource-link" href="https://mininglamp-ai.github.io/WebRetriever" target="_blank">WebRetriever GitHub</a></li>
-      </ul>
-      <ul data-lang="en">
-        <li><strong>Paper</strong>: <a class="resource-link" href="https://arxiv.org/abs/2607.06118" target="_blank">WebRetriever: A Large-Scale Comprehensive Benchmark for Efficient Web Agent Evaluation</a> (ECCV 2026)</li>
-        <li><strong>Dataset</strong>: <a class="resource-link" href="https://huggingface.co/datasets/Mininglamp-2718/WebRetriever" target="_blank">Hugging Face — Mininglamp-2718/WebRetriever</a></li>
-        <li><strong>Open-Source Code</strong>: <a class="resource-link" href="https://mininglamp-ai.github.io/WebRetriever" target="_blank">WebRetriever GitHub</a></li>
-      </ul>
+    <div class="res-grid">
+      <a href="https://arxiv.org/abs/2607.06118" target="_blank" class="res-card">
+        <div class="res-icon"><i class="ai ai-arxiv"></i></div>
+        <div class="title" data-lang="zh">论文</div><div class="title" data-lang="en">Paper</div>
+        <div class="desc">arXiv</div>
+      </a>
+      <a href="https://huggingface.co/datasets/Mininglamp-2718/WebRetriever" target="_blank" class="res-card">
+        <div class="res-icon"><i class="fas fa-database"></i></div>
+        <div class="title" data-lang="zh">数据集</div><div class="title" data-lang="en">Dataset</div>
+        <div class="desc">Hugging Face</div>
+      </a>
+      <a href="https://github.com/Mininglamp-AI/WebRetriever" target="_blank" class="res-card">
+        <div class="res-icon"><i class="fab fa-github"></i></div>
+        <div class="title" data-lang="zh">代码</div><div class="title" data-lang="en">Code</div>
+        <div class="desc">GitHub</div>
+      </a>
+      <a href="https://mininglamp-ai.github.io/WebRetriever/" target="_blank" class="res-card">
+        <div class="res-icon"><i class="fas fa-trophy"></i></div>
+        <div class="title" data-lang="zh">基准榜单</div><div class="title" data-lang="en">Benchmark Leaderboard</div>
+        <div class="desc">WebRetriever</div>
+      </a>
+      <a href="https://im.deepminer.com.cn/?invite=989683cd7197b76e&action=login" target="_blank" class="res-card">
+        <div class="res-icon" style="background:#fffbeb;color:#f59e0b;"><i class="fas fa-comments"></i></div>
+        <div class="title" data-lang="zh">赛事空间</div><div class="title" data-lang="en">Competition Space</div>
+        <div class="desc">Octo</div>
+      </a>
     </div>
   </div>
 
