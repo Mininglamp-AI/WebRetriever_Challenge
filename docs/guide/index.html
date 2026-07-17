@@ -230,6 +230,52 @@
     <h2 data-lang="zh"><i class="fas fa-question-circle"></i> 常见问题</h2>
     <h2 data-lang="en"><i class="fas fa-question-circle"></i> FAQ</h2>
 
+    <div data-lang="zh" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+      <div class="info-card" style="border-left:3px solid var(--accent);margin:0;">
+        <p style="font-weight:700;margin-bottom:8px;">🛠️ 备赛调试（选手自行完成）</p>
+        <ul style="margin:0 0 0 18px;font-size:.9em;color:var(--text-2);">
+          <li><strong>浏览器环境</strong>：自行搭建（本地 Chrome + CDP 或 Playwright）</li>
+          <li><strong>任务数据</strong>：使用开源项目中的示例任务</li>
+          <li><strong>模型资源</strong>：自行准备（商业 API 或自部署）</li>
+          <li><strong>效果评估</strong>：NavEval 可自动评测导航效果；信息提取的评估需自行设计（可基于数据集真实答案进行规则匹配或 LLM 自动评判）</li>
+          <li><strong>Agent 实现</strong>：基于开源项目设计导航 + 信息提取逻辑</li>
+        </ul>
+      </div>
+      <div class="info-card" style="border-left:3px solid var(--primary);margin:0;">
+        <p style="font-weight:700;margin-bottom:8px;">🚀 正式评测（官方提供环境）</p>
+        <ul style="margin:0 0 0 18px;font-size:.9em;color:var(--text-2);">
+          <li><strong>浏览器环境</strong>：官方提供云端沙箱，CDP URL 自动传入</li>
+          <li><strong>任务数据</strong>：官方提供评测任务文件</li>
+          <li><strong>模型资源</strong>：仍由选手自行管理（需公网可访问）</li>
+          <li><strong>评分系统</strong>：官方自动拉取代码、运行并评分</li>
+          <li><strong>比赛模板</strong>：官方提供标准化模板（后续发布）</li>
+        </ul>
+      </div>
+    </div>
+    <div data-lang="en" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+      <div class="info-card" style="border-left:3px solid var(--accent);margin:0;">
+        <p style="font-weight:700;margin-bottom:8px;">🛠️ Preparation (Your Setup)</p>
+        <ul style="margin:0 0 0 18px;font-size:.9em;color:var(--text-2);">
+          <li><strong>Browser</strong>: Set up locally (Chrome + CDP or Playwright)</li>
+          <li><strong>Tasks</strong>: Use example tasks from the open-source project</li>
+          <li><strong>Model</strong>: Prepare your own (commercial API or self-hosted)</li>
+          <li><strong>Evaluation</strong>: NavEval evaluates navigation performance; for information extraction, design your own assessment (e.g., rule-based matching or LLM judging against ground-truth answers from the dataset)</li>
+          <li><strong>Agent</strong>: Design navigation + extraction logic based on the open-source project</li>
+        </ul>
+      </div>
+      <div class="info-card" style="border-left:3px solid var(--primary);margin:0;">
+        <p style="font-weight:700;margin-bottom:8px;">🚀 Formal Evaluation (Official Environment)</p>
+        <ul style="margin:0 0 0 18px;font-size:.9em;color:var(--text-2);">
+          <li><strong>Browser</strong>: Cloud sandboxes provided; CDP URLs passed automatically</li>
+          <li><strong>Tasks</strong>: Official evaluation task files provided</li>
+          <li><strong>Model</strong>: Still managed by your team (must be publicly accessible)</li>
+          <li><strong>Scoring</strong>: System pulls your code, runs it, and scores automatically</li>
+          <li><strong>Template</strong>: Standardized competition template provided (to be released)</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
     <div class="faq-item" data-lang="zh">
       <h3>Q: 比赛题目是什么类型？有多少道？</h3>
       <p>A: 共 <strong>100 道</strong>基于 Protocol III 的端到端评测任务，覆盖多行业真实网站。Agent 需从指定网页出发，自主导航并提取目标信息返回最终答案。</p>
@@ -300,11 +346,11 @@
 
     <div class="faq-item" data-lang="zh">
       <h3>Q: 提交方式是什么？评测如何运行？</h3>
-      <p>A: 选手提交代码仓库，评测系统自动拉取代码、安装依赖，并传入 CDP URL 和任务文件运行你的 Agent。浏览器沙箱由官方提供，选手代码直接控制浏览器完成任务。</p>
+      <p>A: 选手提交代码仓库，评测系统自动拉取代码、安装依赖，通过标准入口脚本将任务文件、输出目录和 CDP URL 作为命令行参数传入运行。浏览器沙箱由官方提供并自动分配，无需额外认证。轨迹截图、操作记录等均由选手代码采集并写入输出目录，评测系统自动读取结果评分。</p>
     </div>
     <div class="faq-item" data-lang="en">
       <h3>Q: How does submission and evaluation work?</h3>
-      <p>A: Teams submit their code repository. The evaluation system automatically pulls the code, installs dependencies, and runs your Agent with CDP URLs and task files. Cloud browser sandboxes are provided by the organizers; your code directly controls the browser to complete tasks.</p>
+      <p>A: Teams submit their code repository. The evaluation system pulls the code, installs dependencies, and invokes your entry script with task file, output directory, and CDP URLs as command-line arguments. Browser sandboxes are provided and assigned automatically — no additional authentication is needed. Trajectory screenshots, action logs, and other artifacts are collected by your code and written to the output directory; the system reads the results for scoring.</p>
     </div>
 
     <div class="faq-item" data-lang="zh">
