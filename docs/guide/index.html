@@ -126,11 +126,11 @@
       </div>
       <div class="step-item" data-lang="zh">
         <div class="step-num">2</div><div class="step-line"></div>
-        <div class="step-body"><strong>备赛：基于开源项目开发 Agent</strong><p>阅读论文，了解 Protocol III，基于开源代码仓库构建你的 Agent。</p></div>
+        <div class="step-body"><strong>备赛：基于开源项目设计 Agent</strong><p>报名后即可开始备赛。阅读论文了解 Protocol III，基于开源项目熟悉 Agent 设计与评测流程，提前构建你的 Agent。</p></div>
       </div>
       <div class="step-item" data-lang="zh">
         <div class="step-num">3</div><div class="step-line"></div>
-        <div class="step-body"><strong>获取队伍仓库 & 迁移代码</strong><p>报名期结束后获得队伍专属私有仓库，将开发好的 Agent 迁移过去。</p></div>
+        <div class="step-body"><strong>获取比赛模板 & 迁移代码</strong><p>比赛模板发布后，将基于开源项目开发好的 Agent 迁移到模板中，只需简单适配。</p></div>
       </div>
       <div class="step-item" data-lang="zh">
         <div class="step-num">4</div><div class="step-line"></div>
@@ -149,11 +149,11 @@
       </div>
       <div class="step-item" data-lang="en">
         <div class="step-num">2</div><div class="step-line"></div>
-        <div class="step-body"><strong>Prepare: Build Your Agent from the Open-Source Project</strong><p>Read the paper, understand Protocol III, and build your Agent based on the open-source code repository.</p></div>
+        <div class="step-body"><strong>Prepare: Design Your Agent from the Open-Source Project</strong><p>Start preparing right after registration. Read the paper, understand Protocol III, explore the open-source project to learn Agent design and evaluation, and start building your Agent.</p></div>
       </div>
       <div class="step-item" data-lang="en">
         <div class="step-num">3</div><div class="step-line"></div>
-        <div class="step-body"><strong>Get Your Team Repository & Migrate Code</strong><p>After registration closes, receive your team's private repository and migrate your Agent into it.</p></div>
+        <div class="step-body"><strong>Get the Competition Template & Migrate Code</strong><p>Once the competition template is released, migrate your Agent into it with only minor adaptations needed.</p></div>
       </div>
       <div class="step-item" data-lang="en">
         <div class="step-num">4</div><div class="step-line"></div>
@@ -177,22 +177,17 @@
     <p data-lang="zh"><strong>① 阅读论文，了解 Protocol III</strong> — WebRetriever 定义了三种评测协议，本次比赛采用 <strong>Protocol III（端到端任务协议）</strong>。建议结合 <a class="resource-link" href="https://arxiv.org/abs/2607.06118" target="_blank">论文</a> 和 <a class="resource-link" href="https://huggingface.co/datasets/Mininglamp-2718/WebRetriever" target="_blank">数据集</a> 了解任务格式与评分标准。</p>
     <p data-lang="en"><strong>① Read the paper & understand Protocol III</strong> — WebRetriever defines three evaluation protocols; this competition uses <strong>Protocol III (End-to-End Task Protocol)</strong>. Read the <a class="resource-link" href="https://arxiv.org/abs/2607.06118" target="_blank">paper</a> and explore the <a class="resource-link" href="https://huggingface.co/datasets/Mininglamp-2718/WebRetriever" target="_blank">dataset</a> to understand the task format and scoring criteria.</p>
 
-    <p data-lang="zh"><strong>② 基于开源代码构建 Agent</strong> — 比赛代码模板基于 <a class="resource-link" href="https://github.com/Mininglamp-AI/WebRetriever" target="_blank">开源仓库</a> 设计，建议直接从开源项目入手：Clone 仓库 → 运行示例 → 设计你自己的 Agent。获得队伍仓库后将代码迁移过去即可。</p>
-    <p data-lang="en"><strong>② Build your Agent from the open-source code</strong> — The competition template is built on the <a class="resource-link" href="https://github.com/Mininglamp-AI/WebRetriever" target="_blank">open-source repository</a>. Start there: clone → run examples → design your own Agent. Migrate your code when you receive your team repository.</p>
+    <p data-lang="zh"><strong>② 熟悉开源项目</strong> — 建议先 Clone <a class="resource-link" href="https://github.com/Mininglamp-AI/WebRetriever" target="_blank">开源仓库</a> 并运行示例，重点了解两部分：<strong>Agent 设计</strong>（<code>src/agent/</code>，基于 UI-TARS 1.5 的完整实现，包括 VLM 交互、浏览器控制、Prompt 模板等）和 <strong>NavEval 自动评测</strong>（<code>src/eval/</code>，用于评估 Agent 轨迹的自动评分框架）。</p>
+    <p data-lang="en"><strong>② Explore the open-source project</strong> — Clone the <a class="resource-link" href="https://github.com/Mininglamp-AI/WebRetriever" target="_blank">open-source repository</a> and run the examples. Focus on two key parts: <strong>Agent design</strong> (<code>src/agent/</code>, a complete implementation based on UI-TARS 1.5, covering VLM interaction, browser control, and prompt templates) and <strong>NavEval automated evaluation</strong> (<code>src/eval/</code>, a framework for scoring Agent trajectories).</p>
     <div class="info-card" data-lang="zh" style="margin-bottom:14px;">
       <p>💡 <strong>注意：</strong>开源项目提供的是 Protocol I（导航协议）的示例实现，相比本次比赛采用的 Protocol III，不包含信息提取部分。由于信息提取的实现方式多样，且与所设计的 Agent 架构密切相关，需要参赛者自行设计与实现。</p>
     </div>
     <div class="info-card" data-lang="en" style="margin-bottom:14px;">
-      <p>💡 <strong>Note:</strong> The open-source project provides a sample implementation for Protocol I (Navigation Protocol). Compared to Protocol III used in this competition, it does not include the information extraction component. Since extraction approaches vary widely and are closely tied to your Agent design, participants need to implement this part on their own.</p>
+      <p>💡 <strong>Note:</strong> The open-source project demonstrates Protocol I (Navigation Protocol). Compared to Protocol III used in this competition, it does not include the information extraction component. Since extraction approaches vary widely and depend on your Agent design, participants need to implement this part on their own.</p>
     </div>
 
-
-    <div class="info-card" data-lang="zh" style="margin-bottom:14px;">
-      <p>📂 开源项目提供了一个基于 <strong>UI-TARS 1.5</strong> 的完整 Agent 实现示例，核心代码在 <code>src/agent/</code> 目录下，包括 Agent 交互逻辑、浏览器控制、Prompt 模板等模块。详见 <a class="resource-link" href="https://github.com/Mininglamp-AI/WebRetriever" target="_blank">GitHub 仓库</a>。</p>
-    </div>
-    <div class="info-card" data-lang="en" style="margin-bottom:14px;">
-      <p>📂 The open-source project provides a complete Agent implementation example based on <strong>UI-TARS 1.5</strong>. Core code is in <code>src/agent/</code>, covering Agent interaction logic, browser control, and prompt templates. See the <a class="resource-link" href="https://github.com/Mininglamp-AI/WebRetriever" target="_blank">GitHub repository</a> for details.</p>
-    </div>
+    <p data-lang="zh"><strong>③ 比赛模板与资源</strong> — 比赛代码模板将在后续发布，它是在开源项目基础上进行精炼，并对评测接口做了标准化，届时只需简单适配即可迁移。比赛期间，<strong>模型推理资源由选手自行管理</strong>（商业 API 或自部署模型均可），<strong>评测环境（云端浏览器沙箱）由官方统一提供</strong>。</p>
+    <p data-lang="en"><strong>③ Competition template & resources</strong> — The competition code template will be released later. It is a streamlined version of the open-source project with standardized evaluation interfaces — migrating your Agent requires only minor adaptations. During the competition, <strong>model inference resources are managed by each team</strong> (commercial APIs or self-hosted models), while the <strong>evaluation environment (cloud browser sandboxes) is provided by the organizers</strong>.</p>
 
     <div class="res-grid">
       <a href="https://arxiv.org/abs/2607.06118" target="_blank" class="res-card">
