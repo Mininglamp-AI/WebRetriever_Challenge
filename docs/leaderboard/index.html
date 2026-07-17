@@ -41,6 +41,17 @@
     <a href="../" class="nav-brand"><img src="../static/images/logo.jpg" alt=""> WebRetriever Challenge</a>
     <div class="nav-links">
       <a href="../" data-lang="zh">赛事主页</a><a href="../" data-lang="en">Home</a>
+      <div class="nav-dropdown" id="navDropdownGuide">
+        <button class="nav-dropdown-toggle">
+          <span data-lang="zh">评测指南</span><span data-lang="en">Guide</span> <i class="fas fa-chevron-down arrow"></i>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="../guide/" data-lang="zh"><i class="fas fa-book-open"></i> 指南首页</a><a href="../guide/" data-lang="en"><i class="fas fa-book-open"></i> Guide Home</a>
+          <a href="../guide/#flow" data-lang="zh"><i class="fas fa-route"></i> 参赛流程</a><a href="../guide/#flow" data-lang="en"><i class="fas fa-route"></i> How It Works</a>
+          <a href="../guide/#prepare" data-lang="zh"><i class="fas fa-rocket"></i> 如何备赛</a><a href="../guide/#prepare" data-lang="en"><i class="fas fa-rocket"></i> Prepare</a>
+          <a href="../guide/#faq" data-lang="zh"><i class="fas fa-question-circle"></i> 常见问题</a><a href="../guide/#faq" data-lang="en"><i class="fas fa-question-circle"></i> FAQ</a>
+        </div>
+      </div>
       <a href="./" class="active" data-lang="zh">比赛榜单</a><a href="./" class="active" data-lang="en">Competition Leaderboard</a>
     </div>
   </div>
@@ -69,6 +80,8 @@ function toggleLang(){
   document.querySelectorAll('a[href*="../"]').forEach(function(a){var u=a.getAttribute('href').split('?')[0];a.href=lang==='en'?u:u+'?lang=zh';});
 }
 (function(){var lang=new URLSearchParams(location.search).get('lang')||'en';document.body.className='lang-'+lang;document.documentElement.lang=lang;document.getElementById('langBtn').textContent=lang==='zh'?'EN':'中';})();
+// Guide dropdown
+(function(){var gd=document.getElementById("navDropdownGuide");if(!gd)return;var gt=gd.querySelector(".nav-dropdown-toggle");if(gt)gt.addEventListener("click",function(e){e.stopPropagation();gd.classList.toggle("is-open");});gd.querySelectorAll(".nav-dropdown-menu a").forEach(function(a){a.addEventListener("click",function(){gd.classList.remove("is-open");});});document.addEventListener("click",function(e){if(!gd.contains(e.target))gd.classList.remove("is-open");});})();
 </script>
 </body>
 </html>

@@ -207,6 +207,17 @@
           <a href="#contact" data-lang="zh"><i class="fas fa-envelope"></i> 联系</a><a href="#contact" data-lang="en"><i class="fas fa-envelope"></i> Contact</a>
         </div>
       </div>
+      <div class="nav-dropdown" id="navDropdownGuide">
+        <button class="nav-dropdown-toggle">
+          <span data-lang="zh">评测指南</span><span data-lang="en">Guide</span> <i class="fas fa-chevron-down arrow"></i>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="guide/" data-lang="zh"><i class="fas fa-book-open"></i> 指南首页</a><a href="guide/" data-lang="en"><i class="fas fa-book-open"></i> Guide Home</a>
+          <a href="guide/#flow" data-lang="zh"><i class="fas fa-route"></i> 参赛流程</a><a href="guide/#flow" data-lang="en"><i class="fas fa-route"></i> How It Works</a>
+          <a href="guide/#prepare" data-lang="zh"><i class="fas fa-rocket"></i> 如何备赛</a><a href="guide/#prepare" data-lang="en"><i class="fas fa-rocket"></i> Prepare</a>
+          <a href="guide/#faq" data-lang="zh"><i class="fas fa-question-circle"></i> 常见问题</a><a href="guide/#faq" data-lang="en"><i class="fas fa-question-circle"></i> FAQ</a>
+        </div>
+      </div>
       <a href="leaderboard/" data-lang="zh">比赛榜单</a>
       <a href="leaderboard/" data-lang="en">Competition Leaderboard</a>
     </div>
@@ -598,6 +609,8 @@ document.getElementById('navBurger').addEventListener('click',function(){documen
 document.getElementById('navDropToggle').addEventListener('click',function(e){e.stopPropagation();document.getElementById('navDropdown').classList.toggle('is-open');});
 document.querySelectorAll('#navDropMenu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navDropdown').classList.remove('is-open');document.getElementById('navLinks').classList.remove('is-open');});});
 document.addEventListener('click',function(e){if(!document.getElementById('navDropdown').contains(e.target)){document.getElementById('navDropdown').classList.remove('is-open');}});
+// Guide dropdown
+(function(){var gd=document.getElementById("navDropdownGuide");if(!gd)return;var gt=gd.querySelector(".nav-dropdown-toggle");if(gt)gt.addEventListener("click",function(e){e.stopPropagation();document.getElementById("navDropdown").classList.remove("is-open");gd.classList.toggle("is-open");});gd.querySelectorAll(".nav-dropdown-menu a").forEach(function(a){a.addEventListener("click",function(){gd.classList.remove("is-open");});});document.addEventListener("click",function(e){if(!gd.contains(e.target))gd.classList.remove("is-open");});})();
 var secs=document.querySelectorAll('.sec[id],.hero[id]');
 function updateNav(){
   var cur='';
