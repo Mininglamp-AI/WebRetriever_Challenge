@@ -370,6 +370,15 @@
       <h3>Q: Are there data compliance or regional restrictions on calling external model APIs?</h3>
       <p>A: No. There are no data compliance or regional restrictions. You are free to call any model API (OpenAI, Claude, Gemini, etc.).</p>
     </div>
+
+    <div class="faq-item" data-lang="zh">
+      <h3>Q: 轨迹截图、操作记录、网络请求等数据由谁采集？</h3>
+      <p>A: 由参赛者的 Agent 代码在运行过程中采集并保存到输出目录。开源项目中有完整的实现供参考（截图保存、动作记录、XHR/Fetch 请求捕获等），评测系统会自动读取输出目录中的结果进行评分。</p>
+    </div>
+    <div class="faq-item" data-lang="en">
+      <h3>Q: Who collects trajectory screenshots, action logs, and network requests?</h3>
+      <p>A: Your Agent code collects and saves these to the output directory during execution. The open-source project provides complete reference implementations (screenshot saving, action logging, XHR/Fetch capture, etc.). The evaluation system automatically reads the results from the output directory for scoring.</p>
+    </div>
   </div>
 
 </div>
