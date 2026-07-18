@@ -444,7 +444,7 @@
   "urls": ["https://...", "https://..."],
   "agent_answer": "找到了屏幕更换指南，共12个步骤"
 }</pre>
-      <p><strong>评分逻辑：</strong><code>status</code> 为 <code>SUCCESS</code> 且 <code>agent_answer</code> 包含正确答案 → 通过。<code>agent_answer</code> 是评分核心字段，需要参赛者自行实现答案提取逻辑。</p>
+      <p><strong>评分逻辑：</strong>每道任务的评判标准为：Agent 导航到目标页面，且提取的信息（<code>agent_answer</code>）语义正确即为通过——不要求与标准答案完全一致（例如标准答案为“2024年3月15日”，回答“3月15日”或“March 15, 2024”均视为正确）。最终得分为通过任务数占总任务数的比例。<code>agent_answer</code> 是评分核心字段，需要参赛者自行实现答案提取逻辑。</p>
     </div>
     <div class="faq-item" data-lang="en">
       <h3>Q: What does the output format look like?</h3>
@@ -470,7 +470,7 @@
   "urls": ["https://...", "https://..."],
   "agent_answer": "Found screen replacement guide with 12 steps"
 }</pre>
-      <p><strong>Scoring logic:</strong> <code>status</code> is <code>SUCCESS</code> and <code>agent_answer</code> contains the correct answer → pass. <code>agent_answer</code> is the core scoring field — participants must implement their own answer extraction logic.</p>
+      <p><strong>Scoring logic:</strong> A task is considered passed when the Agent navigates to the target page and the extracted information (<code>agent_answer</code>) is semantically correct — an exact match with the ground truth is not required (e.g., if the ground truth is "March 15, 2024", answers like "3/15/2024" or "2024-03-15" are also accepted). The final score is the ratio of passed tasks to total tasks. <code>agent_answer</code> is the core scoring field — participants must implement their own answer extraction logic.</p>
     </div>
   </div>
 
