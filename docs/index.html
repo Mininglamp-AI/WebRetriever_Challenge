@@ -597,6 +597,7 @@ var currentLang=new URLSearchParams(location.search).get('lang')||'en';
 document.body.className='lang-'+currentLang;
 document.documentElement.lang=currentLang;
 document.getElementById('langBtn').textContent=currentLang==='zh'?'EN':'中';
+if(currentLang==='zh'){document.querySelectorAll('a[href^="join/"],a[href^="leaderboard/"],a[href^="guide/"]').forEach(function(a){var raw=a.getAttribute('href'),hi=raw.indexOf('#'),base=hi>=0?raw.substring(0,hi):raw,hash=hi>=0?raw.substring(hi):'';base=base.split('?')[0];a.href=base+'?lang=zh'+hash;});}
 function toggleLang(){
   currentLang=currentLang==='zh'?'en':'zh';
   document.body.className='lang-'+currentLang;
