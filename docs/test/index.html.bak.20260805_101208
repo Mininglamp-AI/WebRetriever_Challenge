@@ -30,7 +30,7 @@
     .nav-brand{text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:700;font-size:.95em;color:var(--text-3);}
     .nav-brand img{height:30px;width:30px;border-radius:50%;object-fit:cover;}
     /* NAV NOTICE (顶栏中间公告) */
-    .nav-notice{display:inline-flex;align-items:center;gap:6px;background:var(--gold-light);color:#b45309;font-size:.78em;font-weight:600;padding:5px 14px;border-radius:16px;white-space:nowrap;border:1px solid rgba(245,158,11,.3);}
+    .nav-notice{display:inline-flex;align-items:center;gap:6px;background:var(--primary-light);color:var(--primary-dark);font-size:.78em;font-weight:600;padding:5px 14px;border-radius:16px;white-space:nowrap;border:1px solid rgba(37,99,235,.15);}
     .nav-notice i{font-size:.9em;}
     @media(max-width:900px){.nav-notice{display:none;}}
     /* NAV LINKS */
