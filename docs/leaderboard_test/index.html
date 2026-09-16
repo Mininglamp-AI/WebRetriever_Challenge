@@ -64,6 +64,7 @@
     .col-org{color:var(--text-2);font-size:.9em;line-height:1.45;}
     .col-org .org-na{color:var(--text-4);}
     .num{text-align:center;font-variant-numeric:tabular-nums;white-space:nowrap;}
+    table.lb thead th.num{text-align:center;}
     .score-main{font-weight:700;color:var(--primary);font-size:1.05em;}
     .lb-foot{text-align:center;color:var(--text-4);font-size:.78em;margin-top:16px;}
     @media(max-width:720px){table.lb{font-size:.85em;}table.lb td,table.lb thead th{padding:10px 12px;}.hide-sm{display:none;}}
@@ -132,7 +133,7 @@
         <tbody id="lbBody"></tbody>
       </table>
     </div>
-    <p class="lb-foot" data-lang="zh">排序依据：最终分数（并列同名次）。最终成绩以组委会复核结果为准。</p>
+    <p class="lb-foot" data-lang="zh">排序依据：最终分数同分并列名次。最终成绩以组委会复核结果为准。</p>
     <p class="lb-foot" data-lang="en">Ranked by final score (ties share rank). Final standings subject to committee review.</p>
   </div>
 </div>
@@ -168,7 +169,7 @@ function renderTable(){
     var org=orgOf(r);
     body+='<tr'+(r.rank===1?' class="top1"':'')+'>'
       + '<td class="col-rank">'+rankCell+'</td>'
-      + '<td class="team-cell"><span class="tname">'+r.team+'</span><span class="tsub">'+r.team_id+'</span></td>'
+      + '<td class="team-cell"><span class="tname">'+r.team+'</span></td>'
       + '<td class="num"><span class="score-main">'+r.score+'</span></td>'
       + '<td class="col-org">'+(org ? org : '<span class="org-na">—</span>')+'</td>'
       + '</tr>';
