@@ -67,7 +67,7 @@
     .pod.p3 .pod-medal{background:#f7f0ea;color:#b0805a;}
     .pod-team{font-weight:700;font-size:1.1em;color:var(--text);margin-bottom:4px;}
     .pod-org{font-size:.76em;color:var(--text-4);line-height:1.45;min-height:2.1em;margin-bottom:16px;padding:0 6px;}
-    .pod-score{font-size:2.2em;font-weight:800;color:var(--text);letter-spacing:-1px;line-height:1;}
+    .pod-score{font-size:2.2em;font-weight:800;color:var(--primary);letter-spacing:-1px;line-height:1;}
     .pod-label{font-size:.7em;color:var(--text-4);margin-top:7px;letter-spacing:1.2px;text-transform:uppercase;}
     @media(max-width:560px){.podium{grid-template-columns:1fr;gap:12px;}.pod.p1,.pod.p2,.pod.p3{order:0;transform:none;}.pod.p1:hover,.pod:hover{transform:translateY(-4px);}}
 
@@ -76,7 +76,7 @@
     .lb-card-head{padding:16px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:9px;font-weight:700;color:var(--text-2);font-size:1.02em;background:linear-gradient(180deg,#fff,var(--bg-alt));}
     .lb-card-head i{color:var(--primary);}
     table.lb{width:100%;border-collapse:collapse;font-size:.93em;}
-    table.lb thead th{background:var(--bg-alt);color:var(--text-3);font-weight:700;font-size:.82em;text-align:left;padding:13px 20px;border-bottom:1px solid var(--border);white-space:nowrap;text-transform:uppercase;letter-spacing:.6px;}
+    table.lb thead th{background:var(--bg-alt);color:var(--text-2);font-weight:700;font-size:1.02em;text-align:left;padding:13px 20px;border-bottom:1px solid var(--border);white-space:nowrap;letter-spacing:.4px;}
     table.lb td{padding:15px 20px;border-bottom:1px solid #f1f5f9;color:var(--text-2);vertical-align:middle;}
     table.lb tbody tr:last-child td{border-bottom:none;}
     table.lb tbody tr{transition:background .15s;}
@@ -154,20 +154,20 @@
     <div class="podium" id="podium"></div>
 
     <div class="lb-card">
-      <div class="lb-card-head"><i class="fas fa-list-ol"></i> <span data-lang="zh">完整排名</span><span data-lang="en">Full Ranking</span></div>
+      <div class="lb-card-head"><i class="fas fa-list-ol"></i> <span data-lang="zh">最终排名 Top10</span><span data-lang="en">Final Ranking · Top 10</span></div>
       <table class="lb">
         <thead>
           <tr>
             <th class="col-rank"><span data-lang="zh">名次</span><span data-lang="en">#</span></th>
             <th><span data-lang="zh">队伍名称</span><span data-lang="en">Team</span></th>
             <th class="num col-score"><span data-lang="zh">最终分数</span><span data-lang="en">Final Score</span></th>
-            <th class="col-org"><span data-lang="zh">所属机构</span><span data-lang="en">Organization</span></th>
+            <th class="col-org"><span data-lang="zh">所属机构</span><span data-lang="en">Affiliation</span></th>
           </tr>
         </thead>
         <tbody id="lbBody"></tbody>
       </table>
     </div>
-    <p class="lb-foot" data-lang="zh">排序依据：最终分数同分并列名次。最终成绩以组委会复核结果为准。</p>
+    <p class="lb-foot" data-lang="zh">最终分数同分并列名次，最终成绩以组委会复核为准。</p>
     <p class="lb-foot" data-lang="en">Ranked by final score; ties share rank. Final standings subject to committee review.</p>
   </div>
 </div>
@@ -186,7 +186,7 @@ var DATA = [
   {rank:6, team_id:"WR-014", team:"搜啥都队",   score:40, org_zh:"中国科学院自动化研究所", org_en:"CASIA"},
   {rank:7, team_id:"WR-058", team:"御坂美琴能飞", score:39, org_zh:"中国传媒大学 & 北京航空航天大学", org_en:"CUC & BUAA"},
   {rank:8, team_id:"WR-036", team:"扩大分母",   score:34, org_zh:"中国科学院信息工程研究所", org_en:"IIE, CAS"},
-  {rank:9, team_id:"WR-007", team:"nll",        score:30, org_zh:"", org_en:""},
+  {rank:9, team_id:"WR-007", team:"nll",        score:30, org_zh:"中国科学技术大学", org_en:"USTC"},
   {rank:9, team_id:"WR-047", team:"天生一",     score:30, org_zh:"", org_en:""},
   {rank:9, team_id:"WR-005", team:"Code Kings", score:30, org_zh:"", org_en:""}
 ];
