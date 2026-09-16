@@ -55,8 +55,8 @@
 
     /* PODIUM */
     .podium{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:end;margin-bottom:30px;}
-    .pod{position:relative;background:#fff;border:1px solid #eef1f6;border-radius:20px;padding:30px 20px 26px;text-align:center;box-shadow:0 12px 34px -18px rgba(15,23,42,.20);transition:transform .22s,box-shadow .22s;}
-    .pod::before{content:'';position:absolute;top:0;left:24px;right:24px;height:4px;border-radius:0 0 4px 4px;}
+    .pod{position:relative;overflow:hidden;background:#fff;border:1px solid #eef1f6;border-radius:20px;padding:34px 20px 26px;text-align:center;box-shadow:0 12px 34px -18px rgba(15,23,42,.20);transition:transform .22s,box-shadow .22s;}
+    .pod::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
     .pod.p1::before{background:var(--gold);}
     .pod.p2::before{background:var(--silver);}
     .pod.p3::before{background:var(--bronze);}
@@ -64,7 +64,7 @@
     .pod.p2{order:1;} .pod.p3{order:3;}
     .pod:hover{transform:translateY(-6px);box-shadow:0 18px 42px -18px rgba(15,23,42,.26);}
     .pod.p1:hover{transform:translateY(-18px);}
-    .pod .crown{position:absolute;top:-13px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:1.05em;filter:drop-shadow(0 2px 3px rgba(245,158,11,.3));}
+    .pod .crown{position:absolute;top:10px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:1.05em;filter:drop-shadow(0 2px 3px rgba(245,158,11,.3));}
     .pod-medal{width:50px;height:50px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.35em;}
     .pod.p1 .pod-medal{background:#fdf6e8;color:#c99a2e;}
     .pod.p2 .pod-medal{background:#f1f4f8;color:#8b98a8;}
@@ -86,11 +86,16 @@
     table.lb tbody tr{transition:background .15s;}
     table.lb tbody tr:hover{background:var(--primary-light);}
 
-    .col-rank{width:76px;text-align:center;}
+    .col-rank{width:92px;text-align:center;}
     .rank-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-weight:800;font-size:.88em;font-variant-numeric:tabular-nums;background:var(--bg-alt);color:var(--text-3);border:1px solid var(--border);}
     .rank-badge.g1{background:#fdf6e8;color:#c99a2e;border-color:#f0e2c0;}
     .rank-badge.g2{background:#f1f4f8;color:#8b98a8;border-color:#e2e8f0;}
     .rank-badge.g3{background:#f7f0ea;color:#b0805a;border-color:#ecdcce;}
+    .rank-medaled{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:.95em;font-variant-numeric:tabular-nums;color:var(--text-2);}
+    .rank-medaled i{font-size:1.2em;}
+    .rank-medaled .m1{color:var(--gold);}
+    .rank-medaled .m2{color:var(--silver);}
+    .rank-medaled .m3{color:#b0805a;}
     .team-cell .tname{font-weight:600;color:var(--text);font-size:1.02em;}
     .col-org{color:var(--text-2);font-size:.9em;line-height:1.45;}
     .col-org .org-na{color:var(--text-4);}
@@ -223,7 +228,7 @@ function renderTable(){
   var body='';
   DATA.forEach(function(r){
     var badge = r.rank<=3
-      ? '<span class="rank-badge g'+r.rank+'">'+r.rank+'</span>'
+      ? '<span class="rank-medaled"><i class="fas fa-medal m'+r.rank+'"></i><span class="rk">'+r.rank+'</span></span>'
       : '<span class="rank-badge">'+r.rank+'</span>';
     var org=orgOf(r);
     var rowCls = r.rank<=3 ? ' class="r'+r.rank+'"' : '';
