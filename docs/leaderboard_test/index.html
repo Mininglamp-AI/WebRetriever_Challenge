@@ -56,6 +56,10 @@
     /* PODIUM */
     .podium{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:end;margin-bottom:30px;}
     .pod{position:relative;background:#fff;border:1px solid #eef1f6;border-radius:20px;padding:30px 20px 26px;text-align:center;box-shadow:0 12px 34px -18px rgba(15,23,42,.20);transition:transform .22s,box-shadow .22s;}
+    .pod::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0;}
+    .pod.p1::before{background:var(--gold);}
+    .pod.p2::before{background:var(--silver);}
+    .pod.p3::before{background:var(--bronze);}
     .pod.p1{order:2;transform:translateY(-14px);}
     .pod.p2{order:1;} .pod.p3{order:3;}
     .pod:hover{transform:translateY(-6px);box-shadow:0 18px 42px -18px rgba(15,23,42,.26);}
@@ -92,7 +96,7 @@
     .col-org .org-na{color:var(--text-4);}
     .col-score{width:150px;}
     .score-main{font-weight:800;color:var(--primary);font-size:1.15em;font-variant-numeric:tabular-nums;letter-spacing:-.5px;}
-    thead th.num,td.num{text-align:center;}
+    table.lb th.col-rank,table.lb td.col-rank,table.lb th.num,table.lb td.num{text-align:center;}
     .lb-foot{text-align:center;color:var(--text-4);font-size:.78em;margin-top:18px;line-height:1.7;}
     @media(max-width:720px){table.lb{font-size:.85em;}table.lb td,table.lb thead th{padding:12px 12px;}.col-score{width:auto;}}
   </style>
@@ -157,7 +161,7 @@
       <table class="lb">
         <thead>
           <tr>
-            <th class="col-rank"><span data-lang="zh">名次</span><span data-lang="en">#</span></th>
+            <th class="col-rank"><span data-lang="zh"># 名次</span><span data-lang="en"># Rank</span></th>
             <th><span data-lang="zh">队伍名称</span><span data-lang="en">Team</span></th>
             <th class="num col-score"><span data-lang="zh">最终分数</span><span data-lang="en">Final Score</span></th>
             <th class="col-org"><span data-lang="zh">所属机构</span><span data-lang="en">Affiliation</span></th>
