@@ -61,6 +61,8 @@
     .rank-num{font-weight:700;color:var(--text-3);font-variant-numeric:tabular-nums;}
     .team-cell .tname{font-weight:600;color:var(--text);}
     .team-cell .tsub{display:block;font-weight:400;font-size:.8em;color:var(--text-4);margin-top:1px;}
+    .col-org{color:var(--text-2);font-size:.9em;line-height:1.45;}
+    .col-org .org-na{color:var(--text-4);}
     .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
     .score-main{font-weight:700;color:var(--primary);font-size:1.05em;}
     .lb-foot{text-align:center;color:var(--text-4);font-size:.78em;margin-top:16px;}
@@ -124,8 +126,9 @@
         <thead>
           <tr>
             <th class="col-rank"><span data-lang="zh">名次</span><span data-lang="en">#</span></th>
-            <th><span data-lang="zh">队伍</span><span data-lang="en">Team</span></th>
+            <th><span data-lang="zh">队伍名称</span><span data-lang="en">Team</span></th>
             <th class="num"><span data-lang="zh">最终分数</span><span data-lang="en">Final Score</span></th>
+            <th class="col-org"><span data-lang="zh">所属机构</span><span data-lang="en">Organization</span></th>
           </tr>
         </thead>
         <tbody id="lbBody"></tbody>
@@ -165,11 +168,11 @@ function renderTable(){
   DATA.forEach(function(r){
     var rankCell = r.rank<=3 ? MEDALS[r.rank-1] : '<span class="rank-num">'+r.rank+'</span>';
     var org=orgOf(r);
-    var sub = r.team_id + (org ? ' · '+org : '');
     body+='<tr'+(r.rank===1?' class="top1"':'')+'>'
       + '<td class="col-rank">'+rankCell+'</td>'
-      + '<td class="team-cell"><span class="tname">'+r.team+'</span><span class="tsub">'+sub+'</span></td>'
+      + '<td class="team-cell"><span class="tname">'+r.team+'</span><span class="tsub">'+r.team_id+'</span></td>'
       + '<td class="num"><span class="score-main">'+r.score+'</span></td>'
+      + '<td class="col-org">'+(org ? org : '<span class="org-na">—</span>')+'</td>'
       + '</tr>';
   });
   document.getElementById('lbBody').innerHTML=body;
