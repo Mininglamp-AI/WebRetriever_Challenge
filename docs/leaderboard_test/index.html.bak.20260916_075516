@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="../static/images/favicon.png">
   <link rel="apple-touch-icon" href="../static/images/apple-touch-icon.png">
   <style>
-    :root{--primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#eff6ff;--accent:#0891b2;--gold:#f59e0b;--gold-light:#fffbeb;--silver:#94a3b8;--bronze:#b45309;--text:#0f172a;--text-2:#334155;--text-3:#64748b;--text-4:#94a3b8;--border:#e2e8f0;--bg:#fff;--bg-alt:#f8fafc;--radius:14px;}
+    :root{--primary:#2563eb;--primary-light:#eff6ff;--gold:#f59e0b;--gold-light:#fffbeb;--silver:#94a3b8;--bronze:#b45309;--text:#0f172a;--text-2:#334155;--text-3:#64748b;--text-4:#94a3b8;--border:#e2e8f0;--bg:#fff;--bg-alt:#f8fafc;--radius:14px;}
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Inter','Noto Sans SC',-apple-system,sans-serif;color:var(--text);line-height:1.7;background:var(--bg);min-height:100vh;display:flex;flex-direction:column;}
 
@@ -39,53 +39,35 @@
 
     /* ===== LEADERBOARD ===== */
     .lb-wrap{flex:1;margin-top:54px;padding:48px 24px 80px;}
-    .lb-inner{max-width:920px;margin:0 auto;}
-    .lb-head{text-align:center;margin-bottom:14px;}
+    .lb-inner{max-width:860px;margin:0 auto;}
+    .lb-head{text-align:center;margin-bottom:26px;}
     .lb-head .ico{font-size:2.2em;color:var(--gold);margin-bottom:10px;}
-    .lb-head h1{font-size:1.9em;font-weight:800;letter-spacing:-.5px;}
+    .lb-head h1{font-size:1.8em;font-weight:800;letter-spacing:-.5px;}
     .lb-head .sub{color:var(--text-3);font-size:.95em;margin-top:6px;}
     .lb-badge{display:inline-block;margin-top:12px;background:var(--gold-light);color:#b45309;border:1px solid rgba(245,158,11,.3);font-size:.75em;font-weight:600;padding:4px 14px;border-radius:16px;}
 
-    /* podium */
-    .podium{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0 30px;align-items:end;}
-    .pod-card{background:white;border:1px solid var(--border);border-radius:var(--radius);padding:20px 14px;text-align:center;position:relative;transition:transform .2s;}
-    .pod-card:hover{transform:translateY(-3px);}
-    .pod-1{order:2;border-color:rgba(245,158,11,.5);box-shadow:0 6px 24px rgba(245,158,11,.14);padding-top:30px;}
-    .pod-2{order:1;}
-    .pod-3{order:3;}
-    .pod-medal{font-size:1.8em;margin-bottom:6px;}
-    .pod-1 .pod-medal{color:var(--gold);} .pod-2 .pod-medal{color:var(--silver);} .pod-3 .pod-medal{color:var(--bronze);}
-    .pod-team{font-weight:700;font-size:1.05em;margin-bottom:2px;}
-    .pod-id{font-size:.74em;color:var(--text-4);font-weight:600;letter-spacing:.5px;}
-    .pod-org{font-size:.76em;color:var(--text-4);margin:6px 0 10px;min-height:1.1em;line-height:1.4;}
-    .pod-score{font-size:1.9em;font-weight:800;color:var(--primary);letter-spacing:-1px;line-height:1;}
-    .pod-metric{font-size:.76em;color:var(--text-3);margin-top:6px;}
-    @media(max-width:640px){.podium{grid-template-columns:1fr;}.pod-1,.pod-2,.pod-3{order:0;padding-top:20px;}}
-
-    /* table */
-    .lb-table-wrap{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.03);}
-    table.lb{width:100%;border-collapse:collapse;font-size:.9em;}
-    table.lb thead th{background:var(--bg-alt);color:var(--text-3);font-weight:600;font-size:.86em;text-align:left;padding:13px 16px;border-bottom:1px solid var(--border);white-space:nowrap;}
-    table.lb thead th.sortable{cursor:pointer;user-select:none;transition:color .15s;}
-    table.lb thead th.sortable:hover{color:var(--primary);}
-    table.lb thead th .sort-i{font-size:.85em;margin-left:4px;color:var(--text-4);}
-    table.lb thead th.sorted .sort-i{color:var(--primary);}
-    table.lb td{padding:13px 16px;border-bottom:1px solid var(--border);color:var(--text-2);vertical-align:middle;}
+    .lb-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.03);background:white;}
+    table.lb{width:100%;border-collapse:collapse;font-size:.92em;}
+    table.lb thead th{background:var(--bg-alt);color:var(--text-2);font-weight:700;font-size:1.02em;text-align:left;padding:14px 18px;border-bottom:1px solid var(--border);white-space:nowrap;}
+    table.lb td{padding:14px 18px;border-bottom:1px solid var(--border);color:var(--text-2);vertical-align:middle;}
     table.lb tbody tr:last-child td{border-bottom:none;}
     table.lb tbody tr{transition:background .15s;}
     table.lb tbody tr:hover{background:var(--primary-light);}
-    .col-rank{width:64px;text-align:center;font-weight:700;color:var(--text-3);}
-    .rank-medal{font-size:1.15em;}
+    table.lb tbody tr.top1{background:var(--gold-light);}
+    table.lb tbody tr.top1:hover{background:#fef3c7;}
+    .col-rank{width:70px;text-align:center;}
+    .rank-medal{font-size:1.25em;}
     .rank-1{color:var(--gold);} .rank-2{color:var(--silver);} .rank-3{color:var(--bronze);}
+    .rank-num{font-weight:700;color:var(--text-3);font-variant-numeric:tabular-nums;}
     .team-cell .tname{font-weight:600;color:var(--text);}
     .team-cell .tsub{display:block;font-weight:400;font-size:.8em;color:var(--text-4);margin-top:1px;}
-    .team-cell .tid{font-weight:600;color:var(--text-3);letter-spacing:.4px;}
-    .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
-    .score-main{font-weight:700;color:var(--primary);}
-    .bar{position:relative;background:var(--bg-alt);border-radius:6px;height:7px;width:96px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:8px;}
-    .bar>span{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:6px;}
+    .col-org{color:var(--text-2);font-size:.9em;line-height:1.45;}
+    .col-org .org-na{color:var(--text-4);}
+    .num{text-align:center;font-variant-numeric:tabular-nums;white-space:nowrap;}
+    table.lb thead th.num{text-align:center;}
+    .score-main{font-weight:700;color:var(--primary);font-size:1.05em;}
     .lb-foot{text-align:center;color:var(--text-4);font-size:.78em;margin-top:16px;}
-    @media(max-width:720px){.hide-sm{display:none;}table.lb{font-size:.82em;}table.lb td,table.lb thead th{padding:10px 10px;}}
+    @media(max-width:720px){table.lb{font-size:.85em;}table.lb td,table.lb thead th{padding:10px 12px;}.hide-sm{display:none;}}
   </style>
 </head>
 <body class="lang-zh">
@@ -134,36 +116,33 @@
       <div class="ico"><i class="fas fa-trophy"></i></div>
       <h1 data-lang="zh">比赛榜单</h1>
       <h1 data-lang="en">Competition Leaderboard</h1>
-      <p class="sub" data-lang="zh">WebRetriever Challenge 2026 · Protocol III 端到端任务 · 满榜 47 队</p>
-      <p class="sub" data-lang="en">WebRetriever Challenge 2026 · Protocol III End-to-End Tasks · 47 teams</p>
-      <span class="lb-badge" data-lang="zh"><i class="fas fa-flask"></i> 测试预览</span>
-      <span class="lb-badge" data-lang="en"><i class="fas fa-flask"></i> Test preview</span>
+      <p class="sub" data-lang="zh">WebRetriever Challenge 2026</p>
+      <p class="sub" data-lang="en">WebRetriever Challenge 2026</p>
     </div>
 
-    <div class="podium" id="podium"></div>
-
-    <div class="lb-table-wrap">
+    <div class="lb-card">
       <table class="lb">
         <thead>
           <tr>
-            <th class="col-rank sortable" data-key="rank"><span data-lang="zh">名次</span><span data-lang="en">#</span> <i class="fas fa-sort sort-i"></i></th>
-            <th><span data-lang="zh">队伍</span><span data-lang="en">Team</span></th>
-            <th class="num sortable" data-key="score"><span data-lang="zh">最终分数</span><span data-lang="en">Final Score</span> <i class="fas fa-sort sort-i"></i></th>
+            <th class="col-rank"><span data-lang="zh">名次</span><span data-lang="en">#</span></th>
+            <th><span data-lang="zh">队伍名称</span><span data-lang="en">Team</span></th>
+            <th class="num"><span data-lang="zh">最终分数</span><span data-lang="en">Final Score</span></th>
+            <th class="col-org"><span data-lang="zh">所属机构</span><span data-lang="en">Organization</span></th>
           </tr>
         </thead>
         <tbody id="lbBody"></tbody>
       </table>
     </div>
-    <p class="lb-foot" data-lang="zh">数据来源：leaderboard.numbers · 排序依据：最终分数（并列同名次）。点击表头可切换排序。最终成绩以组委会复核结果为准。</p>
-    <p class="lb-foot" data-lang="en">Source: leaderboard.numbers · Ranked by final score (ties share rank). Click headers to re-sort. Final standings subject to committee review.</p>
+    <p class="lb-foot" data-lang="zh">排序依据：最终分数同分并列名次。最终成绩以组委会复核结果为准。</p>
+    <p class="lb-foot" data-lang="en">Ranked by final score (ties share rank). Final standings subject to committee review.</p>
   </div>
 </div>
 
 <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
 
 <script>
-/* ===== 榜单数据（硬编码，提取自 docs/static/data/leaderboard.numbers 的「分数排名」表） =====
-   如需更新：用 Numbers 改表后，重跑 static/data/numbers_to_json.py 拿到最新数据，替换下面数组。 */
+/* ===== 榜单数据（按最终分数降序，并列同名次） =====
+   更新方式：改下面数组即可；rank 为并列名次。 */
 var DATA = [
   {rank:1, team_id:"WR-048", team:"WebForge",   score:59, org_zh:"多模态超级智能安全北京市重点实验室 & 人民中科", org_en:"Beijing Key Lab of Multimodal Super-Intelligent Safety & People AI"},
   {rank:2, team_id:"WR-074", team:"连续视界",   score:57, org_zh:"华盛顿大学", org_en:"UW"},
@@ -175,75 +154,28 @@ var DATA = [
   {rank:8, team_id:"WR-036", team:"扩大分母",   score:34, org_zh:"中国科学院信息工程研究所", org_en:"IIE, CAS"},
   {rank:9, team_id:"WR-007", team:"nll",        score:30, org_zh:"", org_en:""},
   {rank:9, team_id:"WR-047", team:"天生一",     score:30, org_zh:"", org_en:""},
-  {rank:9, team_id:"WR-005", team:"Code Kings", score:30, org_zh:"", org_en:""},
+  {rank:9, team_id:"WR-005", team:"Code Kings", score:30, org_zh:"", org_en:""}
 ];
 
 var MEDALS = ['<i class="fas fa-medal rank-medal rank-1"></i>','<i class="fas fa-medal rank-medal rank-2"></i>','<i class="fas fa-medal rank-medal rank-3"></i>'];
-var sortKey = 'rank', sortDir = 1; // rank 升序（=分数降序）
-var maxScore = Math.max.apply(null, DATA.map(function(r){return r.score||0;}));
 
 function isZh(){ return document.body.classList.contains('lang-zh'); }
 function orgOf(r){ return isZh() ? (r.org_zh||'') : (r.org_en||''); }
 
-function sortedData(){
-  var arr = DATA.slice();
-  arr.sort(function(a,b){
-    var x=a[sortKey], y=b[sortKey];
-    return (x<y?-1:x>y?1:0)*sortDir;
-  });
-  return arr;
-}
-
-function renderPodium(){
-  var top = DATA.slice().sort(function(a,b){return b.score-a.score;}).slice(0,3);
-  var label = isZh()?'最终分数':'Final Score';
-  var html='';
-  top.forEach(function(r,i){
-    var org=orgOf(r);
-    html+='<div class="pod-card pod-'+(i+1)+'">'
-       + '<div class="pod-medal">'+MEDALS[i]+'</div>'
-       + '<div class="pod-team">'+r.team+'</div>'
-       + '<div class="pod-id">'+r.team_id+'</div>'
-       + '<div class="pod-org">'+org+'</div>'
-       + '<div class="pod-score">'+r.score+'</div>'
-       + '<div class="pod-metric">'+label+'</div>'
-       + '</div>';
-  });
-  document.getElementById('podium').innerHTML=html;
-}
-
 function renderTable(){
-  var arr=sortedData();
   var body='';
-  arr.forEach(function(r){
-    var rankCell = r.rank<=3 ? MEDALS[r.rank-1] : r.rank;
+  DATA.forEach(function(r){
+    var rankCell = r.rank<=3 ? MEDALS[r.rank-1] : '<span class="rank-num">'+r.rank+'</span>';
     var org=orgOf(r);
-    var sub = r.team_id + (org ? ' · '+org : '');
-    body+='<tr>'
+    body+='<tr'+(r.rank===1?' class="top1"':'')+'>'
       + '<td class="col-rank">'+rankCell+'</td>'
-      + '<td class="team-cell"><span class="tname">'+r.team+'</span><span class="tsub">'+sub+'</span></td>'
-      + '<td class="num"><span class="score-main">'+r.score+'</span>'
-        + '<span class="bar"><span style="width:'+(r.score/maxScore*100)+'%"></span></span></td>'
+      + '<td class="team-cell"><span class="tname">'+r.team+'</span></td>'
+      + '<td class="num"><span class="score-main">'+r.score+'</span></td>'
+      + '<td class="col-org">'+(org ? org : '<span class="org-na">—</span>')+'</td>'
       + '</tr>';
   });
   document.getElementById('lbBody').innerHTML=body;
-  document.querySelectorAll('th.sortable').forEach(function(th){
-    var k=th.getAttribute('data-key'), ic=th.querySelector('.sort-i');
-    th.classList.toggle('sorted', k===sortKey);
-    ic.className='fas sort-i '+(k===sortKey?(sortDir<0?'fa-sort-down':'fa-sort-up'):'fa-sort');
-  });
 }
-
-function renderAll(){ renderPodium(); renderTable(); }
-
-document.querySelectorAll('th.sortable').forEach(function(th){
-  th.addEventListener('click',function(){
-    var k=th.getAttribute('data-key');
-    if(k===sortKey){ sortDir*=-1; }
-    else { sortKey=k; sortDir = (k==='score' ? -1 : 1); } // 分数默认降序，名次默认升序
-    renderAll();
-  });
-});
 
 /* ===== 语言切换（沿用主站逻辑） ===== */
 function toggleLang(){
@@ -254,14 +186,13 @@ function toggleLang(){
   document.documentElement.lang=lang;
   history.replaceState(null,'',lang==='en'?location.pathname:location.pathname+'?lang=zh');
   document.querySelectorAll('a[href*="../"]').forEach(function(a){var raw=a.getAttribute('href'),hi=raw.indexOf('#'),base=hi>=0?raw.substring(0,hi):raw,hash=hi>=0?raw.substring(hi):'';base=base.split('?')[0];a.href=lang==='en'?base+hash:base+'?lang=zh'+hash;});
-  renderAll();
+  renderTable();
 }
 (function(){var lang=new URLSearchParams(location.search).get('lang')||'en';document.body.className='lang-'+lang;document.documentElement.lang=lang;document.getElementById('langBtn').textContent=lang==='zh'?'EN':'中';if(lang==='zh'){document.querySelectorAll('a[href*="../"]').forEach(function(a){var raw=a.getAttribute('href'),hi=raw.indexOf('#'),base=hi>=0?raw.substring(0,hi):raw,hash=hi>=0?raw.substring(hi):'';base=base.split('?')[0];a.href=base+'?lang=zh'+hash;});}})();
-// dropdowns
 (function(){var hd=document.getElementById("navDropdownHome");if(!hd)return;var ht=hd.querySelector(".nav-dropdown-toggle");if(ht)ht.addEventListener("click",function(e){e.stopPropagation();document.querySelectorAll(".nav-dropdown").forEach(function(x){if(x!==hd)x.classList.remove("is-open");});hd.classList.toggle("is-open");});hd.querySelectorAll(".nav-dropdown-menu a").forEach(function(a){a.addEventListener("click",function(){hd.classList.remove("is-open");});});document.addEventListener("click",function(e){if(!hd.contains(e.target))hd.classList.remove("is-open");});})();
 (function(){var gd=document.getElementById("navDropdownGuide");if(!gd)return;var gt=gd.querySelector(".nav-dropdown-toggle");if(gt)gt.addEventListener("click",function(e){e.stopPropagation();gd.classList.toggle("is-open");});gd.querySelectorAll(".nav-dropdown-menu a").forEach(function(a){a.addEventListener("click",function(){gd.classList.remove("is-open");});});document.addEventListener("click",function(e){if(!gd.contains(e.target))gd.classList.remove("is-open");});})();
 
-renderAll();
+renderTable();
 </script>
 </body>
 </html>
